@@ -15,7 +15,13 @@ Histogram of Height
 
 ```{r, warning = FALSE}
 nhanes |> 
-  ggplot(aes(x = height)) + 
-  geom_histogram(bins = 100)
+  filter(age <= 18) |> 
+  ggplot(aes(x = height, color = "red")) + 
+  geom_histogram(bins = 100) +
+  facet_wrap(~gender) +
+  labs(title = "Kids Height in the US", 
+       x = "Height", 
+       y = "Number", 
+       caption = "Source: National Health and Nutrition Examination Survey")
 ```
 
