@@ -1,0 +1,21 @@
+---
+title: "Height"
+author: "Amisha Jain"
+date: '2022-06-17'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(primer.data)
+```
+
+Histogram of Height
+
+```{r, warning = FALSE}
+nhanes |> 
+  ggplot(aes(x = height)) + 
+  geom_histogram(bins = 100)
+```
+
